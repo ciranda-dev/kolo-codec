@@ -10,7 +10,7 @@ Canonical binary encoding for Kolo.
 
 Peers sign and hash the bytes they exchange, so a value must always encode to the same bytes. kolo-codec gives every value exactly one byte form: unsigned integers are minimal unsigned LEB128 varints as defined by the [DWARF Version 5 standard](https://dwarfstd.org/dwarf5std.html), signed integers are mapped to unsigned ones by alternating sign (0, -1, 1, -2 become 0, 1, 2, 3), and strings are [UTF-8 (RFC 3629)](https://www.rfc-editor.org/info/rfc3629). It rejects anything else with an error and reads untrusted input without panicking.
 
-It is pure Go and uses only the standard library: no cgo and nothing to install. Kolo libraries use it for everything they sign, hash, send or store.
+It is pure Go and uses only the standard library: no cgo and nothing to install. Most Kolo libraries use it for the values they sign, hash, send or store. kolo-moq and kolo-transport use the wire encodings of their own protocols.
 
 ## Install
 

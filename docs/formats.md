@@ -19,7 +19,7 @@ Strings must be valid UTF-8 but are not normalized, so a precomposed `é` (`c3 a
 
 ## JSON
 
-There is no JSON form. Kolo libraries use these encodings for everything they sign, hash, send or store.
+There is no JSON form. Most Kolo libraries use these encodings for the values they sign, hash, send or store. kolo-moq and kolo-transport use the wire encodings of their own protocols.
 
 ## References
 
